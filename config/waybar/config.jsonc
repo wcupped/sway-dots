@@ -1,0 +1,109 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 0,
+
+    "margin-top": 8,
+    "margin-right": 8,
+    "margin-bottom": 0,
+    "margin-left": 8,
+
+    "modules-left":
+    [
+        "sway/workspaces",
+	"cpu",
+	"memory"
+    ],
+
+    "modules-center":
+    [
+	"sway/window"
+    ],
+
+    "modules-right":
+    [
+	"sway/language",
+        "tray",
+        "network",
+        "pulseaudio",
+        "clock"
+    ],
+
+    "sway/workspaces":
+    {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "tooltip": false
+    },
+
+    "sway/language":
+    {
+	"format": "{short}",
+	"tooltip-format": "{long}",
+	"hide-single-layout": false,
+	"format-en": "us",
+	"format-ru": "ru"
+    },
+
+    "tray":
+    {
+        "spacing": 10,
+        "tooltip": false
+    },
+
+    "network":
+    {
+        "format-wifi" : "wifi up",
+        "format-ethernet": "ethernet up",
+        "format-disconnected" : "no network",
+        "tooltip": false
+    },
+
+    "pulseaudio":
+    {
+        "scroll-step": 2,
+        "max-volume": 150,
+        "format": "vol {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "nospacing": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "clock":
+    {
+        "format": "{:%a %d-%m-%Y %I:%M:%S}",
+        "tooltip": false,
+	"interval": 1
+    },
+
+    "cpu":
+    {
+	"interval": 1,
+	"format": "CPU: {usage}%",
+	"tooltip": true,
+	"states": {
+	    "warning": 70,
+	    "critical": 90
+	}
+    },
+
+    "memory":
+    {
+	"interval": 1,
+	"format": "RAM: {percentage}%",
+	"states":
+	{
+	    "warning": 70,
+	    "critical": 90
+	}
+    },
+
+    "sway/window":
+    {
+	"format": "{title}",
+	"max-length": 100,
+	"tooltip": true
+    }
+}

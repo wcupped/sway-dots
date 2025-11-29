@@ -1,0 +1,43 @@
+# floating window control rules
+# -----------------------------
+#
+# drag floating windows by holding down $mod and left mouse button.
+# resize them with right mouse button + $mod.
+# despite the name, also works for non-floating windows.
+# --to-code parameter was added to make these keybindings work on any keyboard layout
+
+#set $browser firefox
+
+# start a terminal. you can change the terminal in variables file.
+bindsym --to-code $mod+return exec $term
+
+# kill focused window.
+bindsym --to-code $mod+q kill
+
+# start your launcher.
+bindsym --to-code $mod+d exec $menu
+
+# take screenshot (set to hyprshot just to make it more useful).
+bindsym --to-code $mod+s exec hyprshot -m region -z
+
+# change normal to inverse to use left mouse button for resizing and
+# right mouse button for dragging.
+floating_modifier $mod normal
+
+# reload the configuration file.
+bindsym --to-code $mod+c reload
+
+# start a firefox
+bindsym --to-code $mod+shift+b exec $browser
+
+# exit sway (logs you out of your wayland session).
+bindsym --to-code $mod+m exec swaymsg exit
+
+# media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
+# start a powermenu
+bindsym $mod+Escape exec ~/.config/sway/scripts/powermenu.sh

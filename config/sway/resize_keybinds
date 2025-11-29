@@ -1,0 +1,22 @@
+# you shall try them yourself.
+mode "resize" {
+    # right will grow the containers width. left will shrink the containers width.
+    # up will shrink the containers height. down will grow the containers height.
+    bindsym --to-code $left resize shrink width 10px
+    bindsym --to-code $down resize grow height 10px
+    bindsym --to-code $up resize shrink height 10px
+    bindsym --to-code $right resize grow width 10px
+
+    # ditto, with arrow keys.
+    bindsym --to-code Left resize shrink width 10px
+    bindsym --to-code Down resize grow height 10px
+    bindsym --to-code Up resize shrink height 10px
+    bindsym --to-code Right resize grow width 10px
+
+    # return to default mode.
+    bindsym --to-code Return mode "default"
+    bindsym --to-code Escape mode "default"
+}
+
+# use mod+r to go to resize mode.
+bindsym --to-code $mod+r mode "resize"

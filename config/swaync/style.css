@@ -1,0 +1,110 @@
+/* Define Gruvbox colors as CSS variables */
+@define-color bg_dark #282828;
+@define-color fg_light #ebdbb2;
+@define-color accent_orange #fe8019;
+@define-color grey_bg_alt #3c3836;
+@define-color green_success #b8bb26;
+@define-color red_error #fb4934;
+@define-color blue_info #83a598;
+@define-color yellow_warning #fabd2f;
+
+* {
+    font-family: "Iosevka Nerd";
+    font-size: 14px;
+    color: @fg_light;
+}
+
+.notification-row {
+    margin: 5px;
+}
+
+.notification-background {
+    background-color: @bg_dark;
+    border-radius: 12px;
+    padding: 0px;
+    border: 1px solid @grey_bg_alt;
+}
+
+.notification {
+    padding: 10px;
+    margin: 0px;
+    background-color: @bg_dark;
+}
+
+.notification.low {
+    /* No special border for low urgency */
+}
+
+.notification.normal {
+    /* No special border for normal urgency */
+}
+
+.notification.critical {
+    border: 2px solid @red_error;
+}
+
+.notification-content {
+    margin: 5px;
+}
+
+.summary {
+    font-weight: bold;
+    color: @fg_light;
+}
+
+.body {
+    color: @fg_light;
+}
+
+.time {
+    color: @blue_info;
+}
+
+.app-name {
+    font-weight: bold;
+    color: @accent_orange;
+}
+
+/* Control Center Styling */
+.control-center {
+    background-color: @bg_dark;
+    border-radius: 12px;
+    border: 1px solid @grey_bg_alt;
+}
+
+.control-center-button {
+    background-color: @grey_bg_alt;
+    color: @fg_light;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.control-center-button:hover {
+    background-color: @accent_orange;
+}
+
+.control-center .close-button {
+    background-color: @red_error;
+    color: @bg_dark;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+/* Widget Styling */
+.widget-title > * {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.widget-dnd > button {
+    background-color: @grey_bg_alt;
+    color: @fg_light;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.widget-dnd > button:hover {
+    background-color: @green_success;
+}

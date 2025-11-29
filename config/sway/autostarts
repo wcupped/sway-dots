@@ -1,0 +1,16 @@
+# only meant for voidlinux.
+# exec pipewire
+# exec pipewire-pulse
+
+exec --no-startup-id pkill -x polkit-gnome
+
+exec --no-startup-id sleep 2
+
+# these auto-starts are needed for screen-sharing.
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec --no-startup-id /usr/lib/xdg-desktop-portal
+exec --no-startup-id /usr/lib/xdg-desktop-portal-wlr
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id steam -silent
